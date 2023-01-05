@@ -145,7 +145,7 @@ ctrl + shift + {h,j,k,l}
 # 
 
 super + e
-  emacsclient -c -s jose -a emacs
+  emacsclient -c -s jose -a emacs -e "(persp-state-load \"~/.emacs-session\")"
 
 super + s
   sleep 0.3; scrot -s --freeze
