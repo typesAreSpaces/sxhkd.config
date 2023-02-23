@@ -148,7 +148,7 @@ super + e
   emacsclient -c -s jose -a emacs 
 
 super + s
-  sleep 0.3; scrot -s --freeze
+  sleep 0.3; scrot '%Y-%m-%d_$wx$h.png' -s --freeze
 
 super + m
   Mathematica
