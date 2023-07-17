@@ -2,17 +2,11 @@
 # wm independent hotkeys
 #
 
-alt + Return
-	alacritty
+alt + {_,shift + } Return
+	{alacritty, wezterm}
 
-alt + shift + Return
-  ~/.local/scripts/Scratchpad.sh \
-  title terminal-scratchpad \
-  st -n terminal-scratchpad -g 160x50 -e \
-  tmux new-session -s "$(/home/jose/.local/scripts/tmux-session-number)"
-
-alt + backslash
-  alacritty -e tmux attach
+alt + {_,shift + } backslash
+  {alacritty, wezterm} -e tmux attach
 
 # program launcher
 alt + {_, shift + } @space
