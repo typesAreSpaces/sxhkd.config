@@ -172,3 +172,10 @@ ctrl + {Up, Down, m}
 # hide/{unhide last hidden window}
 super + {_, shift +} + h
   bspc node {--flag hidden=on, $(bspc query -N -n .hidden.local.window | head -1) --flag hidden=off}
+
+#
+# rebindings
+#
+
+#ctrl + @apostrophe
+  #xdotool key --clearmodifiers BackSpace
