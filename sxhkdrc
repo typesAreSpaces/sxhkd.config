@@ -177,5 +177,5 @@ super + {_, shift +} + h
 # rebindings
 #
 
-#ctrl + @apostrophe
-  #xdotool key --clearmodifiers BackSpace
+ctrl + @apostrophe
+  xdotool key BackSpace
