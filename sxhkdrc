@@ -177,5 +177,5 @@ super + {_, shift +} + h
 # rebindings
 #
 
-ctrl + apostrophe
-  xdotool keyup apostrophe key --clearmodifiers --delay 1 BackSpace
+ctrl + semicolon
+  xdotool keyup semicolon key --clearmodifiers --delay 1 BackSpace
