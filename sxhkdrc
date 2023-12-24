@@ -2,18 +2,11 @@
 # wm independent hotkeys
 #
 
-# terminal emulator
-super + Return
-	alacritty
+alt + {_,shift + } Return
+	{alacritty, wezterm}
 
-super + shift + Return
-  ~/.local/scripts/Scratchpad.sh \
-  title terminal-scratchpad \
-  st -n terminal-scratchpad -g 160x50 -e \
-  tmux new-session -s "$(/home/jose/.local/scripts/tmux-session-number)"
-
-super + backslash
-  alacritty -e tmux attach
+alt + {_,shift + } backslash
+  {alacritty, wezterm} -e tmux attach
 
 # program launcher
 super + {_, shift + } @space
@@ -80,16 +73,16 @@ super + {_,shift + }{h,j,k,l}
 	#bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local
+alt + {_,shift + }Tab
+  bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
-super + {grave,Tab}
-  bspc node -f {next,prev}.local.!hidden.window
+#alt + {grave,Tab}
+  #bspc {desktop,node} -f last
 
 # focus the older or newer node in the focus history
 #super + {o,i}
@@ -149,7 +142,7 @@ super + e
   emacsclient -c -s jose -a emacs 
 
 super + s
-  sleep 0.3; scrot -s --freeze
+  sleep 0.3; scrot '%Y-%m-%d_$wx$h.png' -s --freeze
 
 super + m
   Mathematica
@@ -179,3 +172,10 @@ ctrl + {Up, Down, m}
 # hide/{unhide last hidden window}
 super + {_, shift +} + h
   bspc node {--flag hidden=on, $(bspc query -N -n .hidden.local.window | head -1) --flag hidden=off}
+
+#
+# rebindings
+#
+
+ctrl + semicolon
+  xdotool keyup semicolon key --clearmodifiers --delay 1 BackSpace
