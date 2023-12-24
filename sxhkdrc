@@ -2,10 +2,10 @@
 # wm independent hotkeys
 #
 
-alt + {_,shift + } Return
+super + {_,shift + } Return
 	{alacritty, wezterm}
 
-alt + {_,shift + } backslash
+super + {_,shift + } backslash
   {alacritty, wezterm} -e tmux attach
 
 # program launcher
